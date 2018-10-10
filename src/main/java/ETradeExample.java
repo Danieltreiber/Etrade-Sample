@@ -16,15 +16,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ETradeExample {
-    public static final String OAUTH_CONSUMER_KEY = "<OAUTH_CONSUMER_KEY>";
-    public static final String OAUTH_CONSUMER_SECRET = "<OAUTH_CONSUMER_SECRET>";
+    private static final String OAUTH_CONSUMER_KEY = "<OAUTH_CONSUMER_KEY>";
+    private static final String OAUTH_CONSUMER_SECRET = "<OAUTH_CONSUMER_SECRET>";
 
     public static void main(final String[] args) throws ETWSException, IOException, URISyntaxException {
         ETradeExample provider = new ETradeExample();
-        provider.getClient();
+        provider.getAccounts();
     }
 
-    private IOAuthClient getClient() throws IOException, ETWSException, URISyntaxException {
+    private IOAuthClient getAccounts() throws IOException, ETWSException, URISyntaxException {
         IOAuthClient client = OAuthClientImpl.getInstance();
         ClientRequest request = new ClientRequest();
         Token oauthRequestToken = getOauthRequestToken(client, request);
